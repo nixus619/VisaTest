@@ -1,6 +1,7 @@
 @FunctionalTest
 Feature: MySql Test
- 
+
+@JustOne 
 Scenario: I am blind
 Given that I might be blind
  

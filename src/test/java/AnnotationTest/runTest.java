@@ -10,7 +10,8 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(
 		features = {"Feature"},
 		glue = {"stepDefinition"},
-		format = {"pretty", "html:target/cucumber", "json:target/cucumber.json"}
+		format = {"pretty", "html:target/cucumber", "json:target/cucumber.json"},
+		tags = {"@JustOne"}
 //		plugin = {"json:target/cucumber-json-report"}
 		) 
 
