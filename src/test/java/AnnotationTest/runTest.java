@@ -10,7 +10,7 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(
 		features = {"Feature"},
 		glue = {"stepDefinition"},
-		plugin = {"html:target/cucumber-html-report"}
+		plugin = {"json:target/cucumber-json-report"}
 		) 
 
 public class runTest { }
