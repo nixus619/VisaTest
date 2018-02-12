@@ -1,6 +1,8 @@
 pipeline {
 	agent any
-	
+	tools {
+		jdk 'jdk'
+	}
 	stages {
 		stage ('Compile Stage') {
 			steps {
