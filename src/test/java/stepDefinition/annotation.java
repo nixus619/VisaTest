@@ -19,7 +19,17 @@ import org.junit.Assert.*;
 
 public class annotation { 
 	
-   @When("^Add entry to Customer Database$") 
+	@Given("^The user has access to the bat file and database$")
+	public void access() throws IOException {
+		assertTrue(true);
+	}
+	
+	@When("^The bat file is run$")
+	public void run() throws IOException {
+		assertTrue(true);
+	}
+	
+	@Then("^The user should be added to the database$") 
 	public void runBat() throws IOException{ 
      System.out.println("Ran");
      String output = null;
