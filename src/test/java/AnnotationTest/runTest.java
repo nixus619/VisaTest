@@ -9,8 +9,9 @@ import cucumber.api.CucumberOptions;
 @RunWith(Cucumber.class) 
 @CucumberOptions(
 		features = {"Feature"},
-		format = {"pretty", "html:target/cucumber"},
 		glue = {"stepDefinition"},
-		tags = {"@SmokeTest","@RegressionTest"} ) 
+		tags = {"@SmokeTest","@RegressionTest"},
+		plugin = {"html:target/cucumber-html-report"}
+		) 
 
 public class runTest { }
