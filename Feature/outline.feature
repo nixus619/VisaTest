@@ -7,8 +7,6 @@ Given The user has access to the bat file and database
 When The bat file is run
 Then The user should be added to the database
 
-
- 
 @RegressionTest
 Scenario: UnSuccessful Login
 Given This is a blank test

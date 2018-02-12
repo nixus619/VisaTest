@@ -1,5 +1,8 @@
 package stepDefinition; 
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,10 +14,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import cucumber.api.java.*;
 import cucumber.api.java.en.*; 
 
+import org.junit.Assert.*;
+
 
 public class annotation { 
 	
-   @When("^The bat file is run$") 
+   @When("^Add entry to Customer Database$") 
 	public void runBat() throws IOException{ 
      System.out.println("Ran");
      String output = null;
@@ -35,6 +40,7 @@ public class annotation {
     	 error = error + line;
      }
      
+     assertTrue(false);
 //     System.out.println("OUTPUT:");
 //     System.out.println("---");
 //     System.out.println(output);
