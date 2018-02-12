@@ -1,6 +1,9 @@
 @FunctionalTest
 Feature: MySql Test
  
+Scenario: I am blind
+Given that I might be blind
+ 
 @SmokeTest @RegressionTest
 Scenario: Add entry to Customer Database
 Given The user has access to the bat file and database

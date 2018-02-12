@@ -10,7 +10,6 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(
 		features = {"Feature"},
 		glue = {"stepDefinition"},
-		tags = {"@SmokeTest","@RegressionTest"},
 		plugin = {"html:target/cucumber-html-report"}
 		) 
 
