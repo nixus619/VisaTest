@@ -9,19 +9,5 @@ pipeline {
 					}
 				}
 			}
-			
-		stage ('Testing Stage') {
-			steps {
-				withMaven(maven : 'Maven') {
-					call 'mvn test'
-				}
-			}	
-		}
-		
-		stage ('Deployment Stage') {
-			steps {
-				echo 'Deploy here'
-				}
-			}
 	}
 }
