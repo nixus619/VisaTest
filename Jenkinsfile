@@ -9,7 +9,6 @@ pipeline {
 				withMaven(maven :'Maven') {
 					bat 'mvn clean compile'
 					}
-				step([$class: 'CucumberReportPublisher', jsonReportDirectory: "./Build/temp/", jenkinsBasePath: '', fileIncludePattern: 'reports.json'])
 				}
 			}
 			
@@ -18,7 +17,8 @@ pipeline {
 				withMaven(maven : 'Maven') {
 					bat 'mvn test'
 				}
-			}	
+			}
+			step([$class: 'CucumberReportPublisher', jsonReportDirectory: "./Build/temp/", jenkinsBasePath: '', fileIncludePattern: 'reports.json'])	
 		}
 		
 		stage ('Deployment Stage') {
