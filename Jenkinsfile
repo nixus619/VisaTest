@@ -24,6 +24,7 @@ pipeline {
 			steps {
 				echo 'Deploy here'
 				}
+				step([$class: 'CucumberReportPublisher', jsonReportDirectory: "./Build/temp/", jenkinsBasePath: '', fileIncludePattern: 'reports.json'])
 			}
 	}
 }
