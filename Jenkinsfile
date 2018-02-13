@@ -10,6 +10,12 @@ pipeline {
 					bat 'mvn clean compile'
 					}
 				}
+			post {
+                always {
+                    //generate cucumber reports
+                    cucumber '**/*.json'
+                }
+            }
 			}
 			
 		stage ('Testing Stage') {
@@ -18,7 +24,6 @@ pipeline {
 					bat 'mvn test'
 				}
 			}
-			step([$class: 'CucumberReportPublisher', jsonReportDirectory: "./Build/temp/", jenkinsBasePath: '', fileIncludePattern: 'reports.json'])	
 		}
 		
 		stage ('Deployment Stage') {
