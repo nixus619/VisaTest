@@ -10,12 +10,6 @@ pipeline {
 					bat 'mvn clean compile'
 					}
 				}
-			post {
-                always {
-                    //generate cucumber reports
-                    cucumber '**/*.json'
-                }
-            }
 			}
 			
 		stage ('Testing Stage') {
@@ -24,6 +18,11 @@ pipeline {
 					bat 'mvn test'
 				}
 			}
+			post {
+                always {
+                    //generate cucumber reports
+                    cucumber '**/*.json'
+                }
 		}
 		
 		stage ('Deployment Stage') {
