@@ -22,7 +22,8 @@ pipeline {
                 always {
                     //generate cucumber reports
                     cucumber '**/*.json'
-                }
+                	}
+           		}
 		}
 		
 		stage ('Deployment Stage') {
