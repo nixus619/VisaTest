@@ -9,7 +9,7 @@ pipeline {
 				withMaven(maven :'Maven') {
 					bat 'mvn clean compile'
 					}
-				steps([$class: 'CucumberReportPublisher', jsonReportDirectory: "./Build/temp/", jenkinsBasePath: '', fileIncludePattern: 'reports.json'])
+				step([$class: 'CucumberReportPublisher', jsonReportDirectory: "./Build/temp/", jenkinsBasePath: '', fileIncludePattern: 'reports.json'])
 				}
 			}
 			
