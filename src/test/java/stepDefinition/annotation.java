@@ -22,7 +22,7 @@ public class annotation {
 	
 	@When("^The bat file is run$")
 	public void run() throws IOException {
-		assertTrue(true);
+		assertTrue(false);
 	}
 	
 	@Then("^The user should be added to the database$") 
@@ -46,7 +46,7 @@ public class annotation {
     	 error = error + line;
      }
      
-     assertTrue(false);
+     assertTrue(true);
 //     System.out.println("OUTPUT:");
 //     System.out.println("---");
 //     System.out.println(output);
