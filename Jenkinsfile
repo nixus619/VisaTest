@@ -29,7 +29,8 @@ pipeline {
 		stage ('Deployment Stage') {
 			steps {
 				echo 'Deploy here'
-				def server = Artifactory.server 'Artifactory'
+				withArtifactory(Artifactory : 'Artifactory') {
+					}
 				}
 			}
 	}
