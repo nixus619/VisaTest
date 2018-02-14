@@ -1,6 +1,4 @@
 pipeline {
-	node {
-		def server = Artifactory.server 'Artifactory'
 	agent any
 	tools {
 		jdk 'JDK'
@@ -33,6 +31,5 @@ pipeline {
 				echo 'Deploy here'
 				}
 			}
-	}
 	}
 }
