@@ -28,6 +28,9 @@ pipeline {
 		
 		stage ('Deployment Stage') {
 			steps {
+			script {
+				def server = Artifactory.server 'Artifactory'
+			}
 				echo 'Deploy here'
 				}
 			}
