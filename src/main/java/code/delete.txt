@@ -1,0 +1,1 @@
+DELETE FROM `dw`.`customer_dim` WHERE `CUSTOMER_ID`='1001';

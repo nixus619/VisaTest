@@ -1,0 +1,1 @@
+INSERT INTO `dw`.`customer_dim` (`CUSTOMER_ID`, `SOURCE_ID`, `FIRST`, `LAST`, `JOINED_DT_ID`, `EMAIL`, `SHIPPING_ADDR_ID`, `BILLING_ADDR_ID`, `PHONE`, `SOURCE_SYSTEM`) VALUES ('1001', '000892', 'Nick', 'Cedor', '342', 'test@test.com', '123455', '234211', '913', 'XMART');
