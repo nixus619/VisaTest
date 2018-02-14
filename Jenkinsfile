@@ -1,5 +1,4 @@
 pipeline {
-	node {
 	def server = Artifactory.newServer url: SERVER_URL, credentialsId: CREDENTIALS
 	def rtMaven = Artifactory.newMavenBuild()
 	agent any
@@ -45,5 +44,4 @@ pipeline {
 				}
 			}
 		}
-	}
 }
