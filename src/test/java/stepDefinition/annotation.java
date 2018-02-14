@@ -17,7 +17,7 @@ public class annotation {
 	
 	@Given("^The user has access to the bat file and database$")
 	public void access() throws IOException {
-		assertTrue(true);
+		assertTrue(false);
 	}
 	
 	@When("^The bat file is run$")
