@@ -1,4 +1,6 @@
 pipeline {
+	node {
+		def server = Artifactory.server 'Artifactory'
 	agent any
 	tools {
 		jdk 'JDK'
@@ -29,9 +31,8 @@ pipeline {
 		stage ('Deployment Stage') {
 			steps {
 				echo 'Deploy here'
-				withArtifactory(Artifactory : 'Artifactory') {
-					}
 				}
 			}
+	}
 	}
 }
