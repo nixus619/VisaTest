@@ -36,6 +36,7 @@ pipeline {
 		}
 		
 		stage ('Deployment Stage') {
+			echo $mystage
 			when {
 			expression { mystage == 'pass'}
 			}
