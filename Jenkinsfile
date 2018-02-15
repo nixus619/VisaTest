@@ -18,11 +18,13 @@ pipeline {
 					try {
 						withMaven(maven : 'Maven') {
 							bat 'mvn test'
-						}
+							}
 						} catch (Exception e) {
+							echo '[FAILURE] Test passes did not all pass. See Cucumber results'
 							currentBuild.result = 'FAILURE'
+							sh "exit ${result}"
+							}
 						}
-					}
 					}
 			post {
                 always {
