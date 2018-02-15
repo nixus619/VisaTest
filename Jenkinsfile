@@ -18,13 +18,13 @@ pipeline {
 					try {
 						withMaven(maven : 'Maven') {
 							bat 'mvn test'
+							mystage = "pass"
 							}
 						} catch (Exception e) {
 							echo '[FAILURE] Test cases did not all pass. See Cucumber results'
 							currentBuild.result = 'FAILURE'
 							mystage = "fail"
 							}
-							myStage = "pass"
 						}
 					}
 			post {
