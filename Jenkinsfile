@@ -20,7 +20,7 @@ pipeline {
 							bat 'mvn test'
 							}
 						} catch (Exception e) {
-							echo '[FAILURE] Test passes did not all pass. See Cucumber results'
+							echo '[FAILURE] Test cases did not all pass. See Cucumber results'
 							currentBuild.result = 'FAILURE'
 							sh "exit ${result}"
 							}
