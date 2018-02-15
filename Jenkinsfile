@@ -30,6 +30,17 @@ pipeline {
 			steps {
 			script {
 				def server = Artifactory.server 'Artifactory'
+				server.username = 'admin'
+				server.password = 'admin'
+				def uploadSpec = """{
+					"files": [
+						{
+							"pattern": "**.txt",
+							"target": "libs-snapshot-local"
+						}
+					]
+				}"""
+				server.upload(uploadSpec)
 			}
 				echo 'Deploy here'
 				}
