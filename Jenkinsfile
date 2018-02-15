@@ -32,6 +32,7 @@ pipeline {
                     //generate cucumber reports
                     cucumber '**/*.json'
                     // Echo stage fail or pass
+                    echo 'Current Stage is'
                     echo mystage
                 	}
            		}
