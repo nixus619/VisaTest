@@ -14,10 +14,16 @@ pipeline {
 			
 		stage ('Testing Stage') {
 			steps {
-				withMaven(maven : 'Maven') {
-					bat 'mvn test'
-				}
-			}
+				script { 
+					try {
+						withMaven(maven : 'Maven') {
+							bat 'mvn test'
+						}
+						} catch (Exception e) {
+							currentBuild.result = 'FAILURE'
+						}
+					}
+					}
 			post {
                 always {
                     //generate cucumber reports
