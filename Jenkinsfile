@@ -18,12 +18,12 @@ pipeline {
 					try {
 						withMaven(maven : 'Maven') {
 							bat 'mvn test'
-							mystage = "pass"
+							mystage = "Pass"
 							}
 						} catch (Exception e) {
 							echo '[FAILURE] Test cases did not all pass. See Cucumber results'
 							currentBuild.result = 'FAILURE'
-							mystage = "fail"
+							mystage = "Fail"
 							}
 						}
 					}
@@ -40,8 +40,8 @@ pipeline {
 		
 		stage ('Deployment Stage') {
 			when {
-			expression { mystage == 'pass'}
-			}
+				expression { mystage == 'Pass'}
+				}
 			steps {
 			script {
 				def server = Artifactory.server 'Artifactory'
@@ -57,6 +57,16 @@ pipeline {
 				}"""
 				server.upload(uploadSpec)
 				}
+			}
+		}
+		
+		stage ('Failure fall back stage') {
+			when {
+					expression { mystage : 'Fail' }
+				}
+			steps {
+					echo 'Fall back steps after a failed build will go here'
+					echo 'Will not deploy any code to artifactory '
 			}
 		}
 	}
