@@ -22,7 +22,7 @@ pipeline {
 						} catch (Exception e) {
 							echo '[FAILURE] Test passes did not all pass. See Cucumber results'
 							currentBuild.result = 'FAILURE'
-							sh "exit"
+							sh "exit ${result}"
 							}
 						}
 					}
@@ -49,9 +49,8 @@ pipeline {
 					]
 				}"""
 				server.upload(uploadSpec)
-			}
-				echo 'Deploy here'
 				}
 			}
+		}
 	}
 }
