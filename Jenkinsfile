@@ -31,12 +31,13 @@ pipeline {
                 always {
                     //generate cucumber reports
                     cucumber '**/*.json'
+                    // Echo stage fail or pass
+                    echo $mystage
                 	}
            		}
 		}
 		
 		stage ('Deployment Stage') {
-			echo $mystage
 			when {
 			expression { mystage == 'pass'}
 			}
