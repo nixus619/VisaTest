@@ -14,6 +14,10 @@ import org.junit.Assert.*;
 
 
 public class annotation { 
+	@Given("^This test will pass$")
+	public void pass() throws IOException {
+		assertTrue(true);
+	}
 	
 	@Given("^The user has access to the bat file and database$")
 	public void access() throws IOException {

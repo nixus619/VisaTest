@@ -2,8 +2,8 @@
 Feature: MySql Test
 
 @JustOne 
-Scenario: I am blind
-Given that I might be blind
+Scenario: Another Empty Test
+Given This test will pass
  
 @SmokeTest @RegressionTest
 Scenario: Add entry to Customer Database
