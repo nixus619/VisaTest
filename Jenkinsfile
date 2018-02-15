@@ -60,7 +60,7 @@ pipeline {
 			}
 		}
 		
-		stage ('Failure fall back stage') {
+		stage ('Failure Stage') {
 			when {
 					expression { mystage == 'Fail' }
 				}
