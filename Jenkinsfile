@@ -51,7 +51,7 @@ pipeline {
 					"files": [
 						{
 							"pattern": "**.txt",
-							"target": "libs-snapshot-local/V1/"
+							"target": "libs-snapshot-local"
 						}
 					]
 				}"""
