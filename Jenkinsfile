@@ -62,7 +62,7 @@ pipeline {
 		
 		stage ('Failure fall back stage') {
 			when {
-					expression { mystage : 'Fail' }
+					expression { mystage == 'Fail' }
 				}
 			steps {
 					echo 'Fall back steps after a failed build will go here'
