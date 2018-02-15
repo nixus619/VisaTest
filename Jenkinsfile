@@ -62,7 +62,6 @@ pipeline {
 		
 		stage ('Failure Stage') {
 			when {
-					// If mystage is fail, then write to log
 					expression { mystage == 'Fail' }
 				}
 			steps {
