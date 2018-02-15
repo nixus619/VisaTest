@@ -22,8 +22,9 @@ pipeline {
 						} catch (Exception e) {
 							echo '[FAILURE] Test cases did not all pass. See Cucumber results'
 							currentBuild.result = 'FAILURE'
-							sh "exit ${result}"
+							mystage = "fail"
 							}
+							myStage = "pass"
 						}
 					}
 			post {
@@ -35,6 +36,9 @@ pipeline {
 		}
 		
 		stage ('Deployment Stage') {
+			when {
+			expression { mystage == 'pass'}
+			}
 			steps {
 			script {
 				def server = Artifactory.server 'Artifactory'
