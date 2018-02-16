@@ -16,7 +16,7 @@ import org.junit.Assert.*;
 public class annotation { 
 	@Given("^This test will not pass$")
 	public void pass() throws IOException {
-		assertTrue(true);
+		assertTrue(false);
 	}
 	
 	@Given("^The user has access to the bat file and database$")
