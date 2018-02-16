@@ -14,7 +14,7 @@ import org.junit.Assert.*;
 
 
 public class annotation { 
-	@Given("^This test will pass$")
+	@Given("^This test will not pass$")
 	public void pass() throws IOException {
 		assertTrue(true);
 	}

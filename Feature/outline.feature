@@ -3,7 +3,7 @@ Feature: MySql Test
 
 @JustOne 
 Scenario: Another Empty Test
-Given This test will pass
+Given This test will not pass
  
 @SmokeTest @RegressionTest
 Scenario: Add entry to Customer Database
